@@ -1,7 +1,7 @@
 document.querySelector(".toggle").addEventListener("click", (e) => {
   const overlay = document.querySelector(".overlay");
 
-  overlay.style.display = "flex";
+  overlay.style.display = "grid";
 
   console.log(overlay.className);
 

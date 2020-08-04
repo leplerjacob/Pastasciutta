@@ -6,6 +6,7 @@ body {
 
 a {
   text-decoration: none;
+  font-family: 'Italiana';
 }
 
 ul {
@@ -23,12 +24,27 @@ ul {
   height: 100%;
   overflow: hidden;
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.overlay ul {
+    margin: 25% 0 0;
+    padding: 0;
 }
 
 .overlay a {
   position: relative;
   text-align: center;
   display: block;
+  color: #cfcece;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.overlay a:hover {
+    font-size: 2.1rem;
+    color: #ff9900;
+
 }
 
 .close-toggle {
