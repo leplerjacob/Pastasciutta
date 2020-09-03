@@ -13,6 +13,25 @@ ul {
   list-style: none;
 }
 
+/* Landing Section */
+.landing {
+  height: 100vh;
+  display: flex;
+  background: url(../img/grey-slate-background-darkened.jpg);
+}
+
+.menu {
+  flex: 1;
+}
+
+.menu-image {
+  flex: 1;
+}
+
+.menu-image img {
+  height: 100%;
+}
+
 /* Overlay */
 .overlay {
   background-color: #57595d;
@@ -23,9 +42,16 @@ ul {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 1fr 1fr;
+  animation: fadein 0.5s;
 }
+
+@keyframes fadein {
+    from { opacity: 0; display: grid;}
+    to   { opacity: 1; }
+}
+
 
 .overlay ul {
     margin: 25% 0 0;
