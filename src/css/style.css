@@ -1,7 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500;1,700;1,800&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow: hidden;
+  height: 100vh;
+}
 
 body {
   margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Italiana";
 }
 
 a {
@@ -13,23 +29,108 @@ ul {
   list-style: none;
 }
 
+:root {
+  --clr-primary: #3c492f;
+  --clr-secondary: #7f8b5d;
+  --clr-light: #f9e687;
+}
+
+
+/* Buttons */
+.btn {
+  height: 3.4rem;
+  width: 10rem;
+  border: 1px solid var(--clr-light);
+  color: white;
+  border-radius: 4px;
+  background: none;
+  font-family: "Italiana";
+  font-size: 1.225rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-order {
+  background: none;
+
+}
+
 /* Landing Section */
 .landing {
-  height: 100vh;
   display: flex;
-  background: url(../img/grey-slate-background-darkened.jpg);
+  flex-direction: row;
+  background: url(/src/img/grey-slate-background-darkened.jpg) no-repeat center center/cover;
+  height: 100vh;
+  width: 100vw;
+  justify-content: space-around
 }
 
 .menu {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 50vw;
+  left: 0;
+  padding: 25vh 40px;
+}
+
+.menu h2 {
+  text-align: left;
+  color: white;
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: 'Alegreya', serif;
+  padding: 0 3em;
+  max-width: 600px;
+  min-width: 550px
+}
+
+.menu h2 .text-highlight {
+  color: var(--clr-light);
+}
+
+.btn-group {
+  max-width: 800px;
+}
+
+.menu .btn {
+  margin: 30px 0;
+}
+
+.menu .btn-order:hover {
+  background: var(--clr-primary);
+}
+
+.menu .btn-contact:hover {
+  color: white;
+  background: var(--clr-primary);
 }
 
 .menu-image {
-  flex: 1;
+  height: 100vh;
+  width: 50%;
+  filter: drop-shadow(0px 50px 50px rgb(0, 0, 0));
 }
 
 .menu-image img {
   height: 100%;
+  width: 100%;
+  min-width: 980px;
+  min-height: 980px;
+}
+
+.logo {
+  width: 100%;
+  max-height: 160px;
+  max-width: 600px;
+  min-height: 160px;
+  min-width: 600px;
+  margin: 1rem 1rem;
 }
 
 /* Overlay */
@@ -54,7 +155,7 @@ ul {
 
 
 .overlay ul {
-    margin: 25% 0 0;
+    margin: 25vh 0 0;
     padding: 0;
 }
 
@@ -73,7 +174,123 @@ ul {
 
 }
 
+.toggle {
+  position: absolute;
+  left: 50px;
+  top: 30px;
+}
+
+.toggle .material-icons {
+  color: white;
+  font-size: 3rem;
+  height: 100%;
+  width: 100%;
+}
+
+.toggle .material-icons:hover {
+  color: #ff9900;
+}
+
 .close-toggle {
   position: relative;
   width: 30px;
+}
+.close-toggle .material-icons {
+  font-size: 3rem;
+}
+
+
+/* Order */
+
+.menu-order {
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.order-form {
+  margin: auto;
+  border-radius: 5px;
+  height: 75vh;
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  align-items: center;
+  animation: fadeInMenu 0.5s;
+}
+
+@keyframes fadeInMenu {
+  from{
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.order-form .options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.order-form h2 {
+  text-align: center;
+  color: black;
+  font-size: 4rem;
+}
+
+.order-form .btn-group .categories{
+  -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+}
+
+.order-form .btn-order {
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 150px;
+  padding: 5px;
+  font-size: 1.125rem;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+  .toggle{
+    position: absolute;
+    z-index: 2;
+  }
+
+  .overlay {
+    z-index: 3;
+  }
+
+  .menu {
+    width: 100vw;
+    z-index: 1;
+    padding: 15vh 20px;
+  }
+
+  .menu h2 {
+    text-align: center;
+  }
+
+
+  .menu-image {
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    opacity: 0.6;
+  }
+
 }
